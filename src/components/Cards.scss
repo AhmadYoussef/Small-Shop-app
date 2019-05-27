@@ -1,0 +1,44 @@
+.cards{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
+    width: 30%;
+    padding: 20px;
+    background-color: rgb(228, 228, 228);
+    .cardHead{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+        border-bottom: 2px solid rgb(179, 179, 179);
+        p{
+            padding: 20px 3px;
+            margin: 0;
+            align-self: center;
+            font-weight: 500;
+            span{
+                background-color: red;
+                padding: 5px 10px;
+                color: white;
+                border-radius: 4px;
+            }        
+        }
+        div{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: 600;
+            color: gray;
+        }
+    }
+    .empty{
+        height: 200px;
+        line-height: 200px;
+        color: gray;
+        text-shadow: 1px 0 0px black;
+    }
+
+}

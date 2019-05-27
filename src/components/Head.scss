@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: green;
+    .logo{
+        font-weight: 800;
+        font-size: 30px;
+        color: white;
+    }
+    button{
+        position: relative;
+        padding: 20px;
+        background-color: rgb(134, 2, 2);
+        border-radius: 50px;
+        border:0;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        span{
+            position: absolute;
+            top:5px;
+            right: 10px;
+        }
+    }
+}
