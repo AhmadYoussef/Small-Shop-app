@@ -10,7 +10,11 @@ class App extends React.Component {
 
   state={
     products :[
-      {id:1, img : 'https://dummyimage.com/600x400/000/fff', productTitle : 'Product 1' , ProductDescription : 'product 1 is the best product', totalItems : 0 },
+      {id:1, 
+        img : 'https://dummyimage.com/600x400/000/fff', 
+        productTitle : 'Product 1' , 
+        ProductDescription : 'product 1 is the best product', 
+        totalItems : 0 },
       {id:2, img : 'https://dummyimage.com/600x400/000/ff0', productTitle : 'Product 2' , ProductDescription : 'product 2 is the best product', totalItems : 0  },
       {id:3, img : 'https://dummyimage.com/600x400/000/0ff', productTitle : 'Product 3' , ProductDescription : 'product 3 is the best product', totalItems : 0  },
       {id:4, img : 'https://dummyimage.com/600x400/000/f0f', productTitle : 'Product 4' , ProductDescription : 'product 4 is the best product', totalItems : 0  },
@@ -18,6 +22,13 @@ class App extends React.Component {
     ],
     productsList :[ ],
     isBasketShow : false,
+  }
+  componentDidMount(){
+    if(localStorage.getItem('productsList'))
+    this.setState({productsList: JSON.parse(localStorage.getItem('productsList'))})
+  }
+  componentDidUpdate(){
+      localStorage.setItem('productsList', JSON.stringify(this.state.productsList));
   }
   totalOfCardItems = () =>{
     let items = 0;
@@ -50,6 +61,7 @@ class App extends React.Component {
   }
 
   render(){
+    
     return (
       <div className="App">
           <Head totalItems ={this.totalOfCardItems} showBasket={this.showBasket}/>
